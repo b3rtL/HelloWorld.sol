@@ -84,6 +84,20 @@
       	{
       		"constant": true,
       		"inputs": [],
+      		"name": "changedCount",
+      		"outputs": [
+      			{
+      				"name": "",
+      				"type": "uint256"
+      			}
+      		],
+      		"payable": false,
+      		"stateMutability": "view",
+      		"type": "function"
+      	},
+      	{
+      		"constant": true,
+      		"inputs": [],
       		"name": "get",
       		"outputs": [
       			{
@@ -114,13 +128,25 @@
       		"payable": false,
       		"stateMutability": "nonpayable",
       		"type": "constructor"
+      	},
+      	{
+      		"anonymous": false,
+      		"inputs": [
+      			{
+      				"indexed": true,
+      				"name": "_helloWorld",
+      				"type": "string"
+      			}
+      		],
+      		"name": "makeEvent",
+      		"type": "event"
       	}
       ];
 
 
 
       // Contract Address
-      var contractAddress = '0x8966551E9F7fe5899e99AcF90d292e002163f2c3';
+      var contractAddress = '0x65A3c7612123B218F83ADfCde2e92E2C736e9007';
 
       // Set the Contract
       var contract = web3.eth.contract(contractAbi).at(contractAddress);
