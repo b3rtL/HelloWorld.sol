@@ -34,6 +34,7 @@
                 </div>
               </div>
             </form>
+            <span id="counter"></span>
           </div>
         </div>
       </div>
@@ -157,8 +158,10 @@
           console.log(err);
           $('#status').html(err);
         }
-        $('#helloWorld').html(helloWorld);
+        $('#helloWorld').text(helloWorld);
       });
+
+      counter.html(contract.changedCount)
 
       // Change the Stored String
       $('form').on('submit', function(event) {
