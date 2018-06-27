@@ -23,7 +23,7 @@ function readTextFile(file, callback) {
 };
 
 //Reads JSON file and sets abi
-readTextFile("inc/abi.json", function(text){
+readTextFile("abi.json", function(text){
   contractAbi = JSON.parse(text);
   console.log('read abi:', contractAbi);
 });
