@@ -1,5 +1,80 @@
 // Contract Abi
-var contractAbi;
+var contractAbi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_helloWorld",
+				"type": "string"
+			}
+		],
+		"name": "make",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "changedCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "helloWorld",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_helloWorld",
+				"type": "string"
+			}
+		],
+		"name": "makeEvent",
+		"type": "event"
+	}
+];
 
 // Contract Address
 var contractAddress = '0x65A3c7612123B218F83ADfCde2e92E2C736e9007';
@@ -10,23 +85,23 @@ var helloworld = document.getElementById('helloWorld');
 var input = document.getElementById('fuck');
 
 //Enables JSON
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        };
-    };
-    rawFile.send(null);
-};
-
-//Reads JSON file and sets abi
-readTextFile("https://b3rtl.github.io/MotD/js/abi.json", function(text){
-  contractAbi = JSON.parse(text);
-  console.log('read abi:', contractAbi);
-});
+// function readTextFile(file, callback) {
+//     var rawFile = new XMLHttpRequest();
+//     rawFile.overrideMimeType("application/json");
+//     rawFile.open("GET", file, true);
+//     rawFile.onreadystatechange = function() {
+//         if (rawFile.readyState === 4 && rawFile.status == "200") {
+//             callback(rawFile.responseText);
+//         };
+//     };
+//     rawFile.send(null);
+// };
+//
+// //Reads JSON file and sets abi
+// readTextFile("https://b3rtl.github.io/MotD/js/abi.json", function(text){
+//   contractAbi = JSON.parse(text);
+//   console.log('read abi:', contractAbi);
+// });
 
 
 //HTML Sanitizer
